@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Future Trains</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Future Trains</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="trains.html">Trains</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact">
+            <h2>Get in Touch</h2>
+            <p>Have questions or want to learn more about Future Trains? We would love to hear from you. Fill out the form below and we'll get back to you as soon as possible.</p>
+            <form id="contactForm">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <div id="formMessage"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Future Trains. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js">
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Simulate form submission
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (name && email && message) {
+            document.getElementById('formMessage').innerText = "Thank you for reaching out, " + name + "! We'll get back to you soon.";
+            document.getElementById('contactForm').reset();
+        } else {
+            document.getElementById('formMessage').innerText = "Please fill in all fields.";
+            document.getElementById('formMessage').style.color = "red";
+        }
+        });
+
+    </script>
+</body>
+</html>
